@@ -12,6 +12,4 @@ public class button : MonoBehaviour
     }
 
 
-
-
 }

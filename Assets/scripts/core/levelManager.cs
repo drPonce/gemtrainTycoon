@@ -14,7 +14,7 @@ public class levelManager : MonoBehaviour
     public GameObject marketPrefab;
     public GameObject factoryPrefab;
 
-    [Header("ReferencesDuringGame")]
+    [Header("PublicInfoDuringGame")]
     public plot currentlyHighlightedPlot;
 
     private void Awake()

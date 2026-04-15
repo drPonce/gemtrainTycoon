@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+
 public class timeManager : MonoBehaviour
 {
 
@@ -12,9 +13,18 @@ public class timeManager : MonoBehaviour
     public float tickDuration = 1f; //esto son los segundos que tarda cada tick
     public float gameSpeed = 1f; //esto es el multiplicador que voy a tocar con el gamespeed button como en el pkmn z
 
+
     private float timer;
 
+    [Header("PublicInfoDuringGame")]
+    public int trainCurrentStation = 0;
+
+
+
     public static event Action OnTick;
+    public static event Action OnTrainReachedNewStop;
+
+
 
     private void Awake()
     {
@@ -39,4 +49,12 @@ public class timeManager : MonoBehaviour
             
         }
     }
+
+    public void callOnTrainReachedNewStop(int newStopIndex)
+    {
+        trainCurrentStation=newStopIndex;
+        OnTrainReachedNewStop?.Invoke();
+    }
+
+
 }
